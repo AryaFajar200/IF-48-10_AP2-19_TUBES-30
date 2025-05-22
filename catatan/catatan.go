@@ -1,11 +1,11 @@
 package catatan
 
 type Catatan struct {
-	id        int
-	tanggal string
-	topik     string
-	isi       string
-	kesulitan int
+	ID      int
+	Tanggal string
+	Topik     string
+	Isi       string
+	Kesulitan int
 }
 
 const MAX = 100
