@@ -2,16 +2,16 @@ package catatan
 
 import "fmt"
 
-func HapusCatatan() {
+func HapusCatatan(catatan *[MAX]Catatan, jumlah *int) {
 	var id, i, j int
-	fmt.Print("Masukkan id catatan yang ingin dihapus: ")
+	fmt.Print("Masukkan ID catatan yang ingin dihapus: ")
 	fmt.Scan(&id)
-	for i = 0; i < jumlahCatatan; i++ {
-		if daftarCatatan[i].id == id {
-			for j = i; j < jumlahCatatan-1; j++ {
-				daftarCatatan[j] = daftarCatatan[j+1]
+	for i = 0; i < *jumlah; i++ {
+		if catatan[i].id == id {
+			for j = i; j < *jumlah-1; j++ {
+				catatan[j] = catatan[j+1]
 			}
-			jumlahCatatan--
+			*jumlah--
 			fmt.Println("Catatan berhasil dihapus.")
 			return
 		}

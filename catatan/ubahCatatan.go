@@ -2,20 +2,20 @@ package catatan
 
 import "fmt"
 
-func UbahCatatan() {
+func UbahCatatan(catatan *[MAX]Catatan, jumlah int) {
 	var id, i int
 	fmt.Print("Masukkan id catatan yang ingin diubah: ")
 	fmt.Scan(&id)
-	for i = 0; i < jumlahCatatan; i++ {
-		if daftarCatatan[i].id == id {
+	for i = 0; i < JumlahCatatan; i++ {
+		if DaftarCatatan[i].id == id {
 			fmt.Print("Tanggal baru: ")
-			fmt.Scan(&daftarCatatan[i].tanggal)
+			fmt.Scan(&DaftarCatatan[i].tanggal)
 			fmt.Print("Topik baru: ")
-			fmt.Scan(&daftarCatatan[i].topik)
+			fmt.Scan(&DaftarCatatan[i].topik)
 			fmt.Print("Isi baru: ")
-			fmt.Scan(&daftarCatatan[i].isi)
+			fmt.Scan(&DaftarCatatan[i].isi)
 			fmt.Print("Kesulitan baru: ")
-			fmt.Scan(&daftarCatatan[i].kesulitan)
+			fmt.Scan(&DaftarCatatan[i].kesulitan)
 			fmt.Println("Catatan berhasil diubah (UPDATED YEAY)")
 			return
 		}

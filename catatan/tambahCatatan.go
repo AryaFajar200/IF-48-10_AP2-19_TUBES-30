@@ -2,21 +2,22 @@ package catatan
 
 import "fmt"
 
-func TambahCatatan() {
-	if jumlahCatatan >= MAX {
-		fmt.Println("Data sudah penuh!")
+func TambahCatatan(catatan *[MAX]Catatan, jumlah *int) {
+	if *jumlah >= MAX {
+		fmt.Println("Data penuh!")
 		return
 	}
-	fmt.Print("Tanggal (HARI-BULAN-TANGGAL): ")
-	fmt.Scan(&daftarCatatan[jumlahCatatan].tanggal)
+	var c Catatan
+	fmt.Print("Tanggal (YYYY-MM-DD): ")
+	fmt.Scan(&c.tanggal)
 	fmt.Print("Topik: ")
-	fmt.Scan(&daftarCatatan[jumlahCatatan].topik)
+	fmt.Scan(&c.topik)
 	fmt.Print("Isi catatan: ")
-	fmt.Scan(&daftarCatatan[jumlahCatatan].isi)
+	fmt.Scan(&c.isi)
 	fmt.Print("Kesulitan (1-5): ")
-	fmt.Scan(&daftarCatatan[jumlahCatatan].kesulitan)
-
-	daftarCatatan[jumlahCatatan].id = jumlahCatatan + 1
-	jumlahCatatan++
+	fmt.Scan(&c.kesulitan)
+	c.id = *jumlah + 1
+	catatan[*jumlah] = c
+	*jumlah++
 	fmt.Println("Catatan berhasil ditambahkan.")
 }

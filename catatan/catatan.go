@@ -10,5 +10,5 @@ type Catatan struct {
 
 const MAX = 100
 
-var daftarCatatan [MAX]Catatan
-var jumlahCatatan int = 0
+var DaftarCatatan [MAX]Catatan
+var JumlahCatatan int = 0
