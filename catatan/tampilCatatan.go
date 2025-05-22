@@ -11,6 +11,6 @@ func TampilkanDaftarCatatan(catatan *[MAX]Catatan, jumlah int) {
 	fmt.Println("Daftar Catatan:")
 	for i = 0; i < jumlah; i++ {
 		fmt.Printf("ID: %d | Tanggal: %s | Topik: %s | Kesulitan: %d\n",
-			catatan[i].id, catatan[i].tanggal, catatan[i].topik, catatan[i].kesulitan)
+			catatan[i].ID, catatan[i].Tanggal, catatan[i].Topik, catatan[i].Kesulitan)
 	}
 }

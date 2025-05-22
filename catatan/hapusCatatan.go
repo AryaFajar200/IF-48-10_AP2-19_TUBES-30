@@ -7,7 +7,7 @@ func HapusCatatan(catatan *[MAX]Catatan, jumlah *int) {
 	fmt.Print("Masukkan ID catatan yang ingin dihapus: ")
 	fmt.Scan(&id)
 	for i = 0; i < *jumlah; i++ {
-		if catatan[i].id == id {
+		if catatan[i].ID == id {
 			for j = i; j < *jumlah-1; j++ {
 				catatan[j] = catatan[j+1]
 			}
