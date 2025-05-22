@@ -5,6 +5,8 @@ import (
 	"tubesalpro/catatan"
 )
 
+
+
 func menu() {
 	var pilihan int
 	for {
@@ -26,13 +28,13 @@ func menu() {
 
 		switch pilihan {
 		case 1:
-			catatan.TambahCatatan()
+			catatan.TambahCatatan(&catatan.DaftarCatatan, &catatan.JumlahCatatan)
 		case 2:
-			catatan.UbahCatatan()
+			catatan.UbahCatatan(&catatan.DaftarCatatan, catatan.JumlahCatatan)
 		case 3:
-			catatan.HapusCatatan()
+			catatan.HapusCatatan(&catatan.DaftarCatatan, &catatan.JumlahCatatan)
 		case 4:
-			catatan.TampilkanDaftarCatatan()
+			catatan.TampilkanDaftarCatatan(&catatan.DaftarCatatan, catatan.JumlahCatatan)
 		case 0:
 			fmt.Println("Terima kasih!")
 			return

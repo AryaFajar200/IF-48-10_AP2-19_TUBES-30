@@ -2,18 +2,15 @@ package catatan
 
 import "fmt"
 
-func TampilkanDaftarCatatan() {
+func TampilkanDaftarCatatan(catatan *[MAX]Catatan, jumlah int) {
 	var i int
-	if jumlahCatatan == 0 {
+	if jumlah == 0 {
 		fmt.Println("Belum ada catatan.")
 		return
 	}
 	fmt.Println("Daftar Catatan:")
-	for i = 0; i < jumlahCatatan; i++ {
+	for i = 0; i < jumlah; i++ {
 		fmt.Printf("ID: %d | Tanggal: %s | Topik: %s | Kesulitan: %d\n",
-			daftarCatatan[i].id,
-			daftarCatatan[i].tanggal,
-			daftarCatatan[i].topik,
-			daftarCatatan[i].kesulitan)
+			catatan[i].id, catatan[i].tanggal, catatan[i].topik, catatan[i].kesulitan)
 	}
 }
