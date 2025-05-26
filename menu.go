@@ -41,11 +41,11 @@ func menu() {
    			 fmt.Print("Masukkan keyword topik: ")
     		 fmt.Scan(&keyword)
    			 fitur.SequentialSearch(&catatan.DaftarCatatan, catatan.JumlahCatatan, keyword)
-		// case 6:
-   		// 	 var keyword string
-   		// 	 fmt.Print("Masukkan keyword topik: ")
-   		// 	 fmt.Scan(&keyword)
-   		// 	 fitur.BinarySearch(&catatan.DaftarCatatan, catatan.JumlahCatatan, keyword)
+		case 6:
+   			 var keyword string
+   			 fmt.Print("Masukkan keyword topik: ")
+   			 fmt.Scan(&keyword)
+   			 fitur.BinarySearch(&catatan.DaftarCatatan, catatan.JumlahCatatan, keyword)
 		case 0:
 			fmt.Println("Terima kasih!")
 			return
