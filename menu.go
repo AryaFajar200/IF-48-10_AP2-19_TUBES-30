@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"tubesalpro/catatan"
 	"tubesalpro/fitur"
+	"tubesalpro/fitursorting"
 )
 
 
@@ -19,8 +20,8 @@ func menu() {
 		fmt.Println("4. Tampilkan Catatan")
 		fmt.Println("5. Cari Catatan (Sequential Search)")
 		fmt.Println("6. Cari Catatan (Binary Search)")
-		// fmt.Println("6. Urutkan Catatan Berdasarkan Tanggal (Selection Sort)")
-		// fmt.Println("7. Urutkan Catatan Berdasarkan Kesulitan (Insertion Sort)")
+		fmt.Println("7. Urutkan Catatan Berdasarkan Tanggal (Selection Sort)")
+		fmt.Println("8. Urutkan Catatan Berdasarkan Kesulitan (Insertion Sort)")
 		// fmt.Println("8. Tampilkan Soal Latihan")
 		// fmt.Println("9. Buat Jadwal Belajar")
 		fmt.Println("0. Keluar")
@@ -47,6 +48,12 @@ func menu() {
    			 fmt.Print("Masukkan keyword topik: ")
    			 fmt.Scan(&keyword)
    			 fitur.BinarySearch(&data, nData, keyword)
+		case 7:
+			fitursorting.SelectionSortByTanggal(&data, nData)
+			catatan.TampilkanDaftarCatatan(&data, nData)
+		case 8:
+			fitursorting.InsertionSortByKesulitan(&data, nData)
+			catatan.TampilkanDaftarCatatan(&data, nData)
 		case 0:
 			fmt.Println("Terima kasih!")
 			return
