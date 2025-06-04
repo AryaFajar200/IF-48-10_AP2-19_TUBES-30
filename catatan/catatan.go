@@ -8,7 +8,7 @@ type Catatan struct {
 	Kesulitan int
 }
 
+type DaftarCatatan [100]Catatan
+
 const MAX = 100
 
-var DaftarCatatan [MAX]Catatan
-var JumlahCatatan int = 0

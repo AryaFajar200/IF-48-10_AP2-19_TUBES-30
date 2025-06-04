@@ -2,7 +2,7 @@ package catatan
 
 import "fmt"
 
-func TampilkanDaftarCatatan(catatan *[MAX]Catatan, jumlah int) {
+func TampilkanDaftarCatatan(catatan *DaftarCatatan, jumlah int) {
 	var i int
 	if jumlah == 0 {
 		fmt.Println("Belum ada catatan.")

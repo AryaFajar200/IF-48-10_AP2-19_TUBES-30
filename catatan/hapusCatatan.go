@@ -2,7 +2,7 @@ package catatan
 
 import "fmt"
 
-func HapusCatatan(catatan *[MAX]Catatan, jumlah *int) {
+func HapusCatatan(catatan *DaftarCatatan, jumlah *int) {
 	var id, i, j int
 	fmt.Print("Masukkan ID catatan yang ingin dihapus: ")
 	fmt.Scan(&id)

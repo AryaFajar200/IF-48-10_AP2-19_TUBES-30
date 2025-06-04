@@ -5,7 +5,7 @@ import (
 	"tubesalpro/catatan"
 )
 
-func SequentialSearch(data *[catatan.MAX]catatan.Catatan, jumlah int, keyword string) {
+func SequentialSearch(data *catatan.DaftarCatatan, jumlah int, keyword string) {
 	var ketemu bool
 	var i int
 	ketemu = false
@@ -27,7 +27,7 @@ func SequentialSearch(data *[catatan.MAX]catatan.Catatan, jumlah int, keyword st
 }
 
 
-func SortByTopik(data *[catatan.MAX]catatan.Catatan, jumlah int) {
+func SortByTopik(data *catatan.DaftarCatatan, jumlah int) {
 	var i, j int
     for i = 0; i < jumlah-1; i++ {
         for j = 0; j < jumlah-i-1; j++ {

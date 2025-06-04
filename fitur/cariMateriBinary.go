@@ -5,7 +5,7 @@ import (
 	"tubesalpro/catatan"
 )
 
-func BinarySearch(data *[catatan.MAX]catatan.Catatan, jumlah int, keyword string) {
+func BinarySearch(data *catatan.DaftarCatatan, jumlah int, keyword string) {
 	var low, high, mid int
     SortByTopik(data, jumlah)
 

@@ -9,7 +9,8 @@ import (
 
 
 func menu() {
-	var pilihan int
+	var pilihan, nData int
+	var data catatan.DaftarCatatan
 	for {
 		fmt.Println("\n=== APLIKASI AI ASISTEN BELAJAR ===")
 		fmt.Println("1. Tambah Catatan")
@@ -29,23 +30,23 @@ func menu() {
 
 		switch pilihan {
 		case 1:
-			catatan.TambahCatatan(&catatan.DaftarCatatan, &catatan.JumlahCatatan)
+			catatan.TambahCatatan(&data, &nData)
 		case 2:
-			catatan.UbahCatatan(&catatan.DaftarCatatan, catatan.JumlahCatatan)
+			catatan.UbahCatatan(&data, nData)
 		case 3:
-			catatan.HapusCatatan(&catatan.DaftarCatatan, &catatan.JumlahCatatan)
+			catatan.HapusCatatan(&data, &nData)
 		case 4:
-			catatan.TampilkanDaftarCatatan(&catatan.DaftarCatatan, catatan.JumlahCatatan)
+			catatan.TampilkanDaftarCatatan(&data, nData)
 		case 5:
    			 var keyword string
    			 fmt.Print("Masukkan keyword topik: ")
     		 fmt.Scan(&keyword)
-   			 fitur.SequentialSearch(&catatan.DaftarCatatan, catatan.JumlahCatatan, keyword)
+   			 fitur.SequentialSearch(&data, nData, keyword)
 		case 6:
    			 var keyword string
    			 fmt.Print("Masukkan keyword topik: ")
    			 fmt.Scan(&keyword)
-   			 fitur.BinarySearch(&catatan.DaftarCatatan, catatan.JumlahCatatan, keyword)
+   			 fitur.BinarySearch(&data, nData, keyword)
 		case 0:
 			fmt.Println("Terima kasih!")
 			return

@@ -2,7 +2,8 @@ package catatan
 
 import "fmt"
 
-func TambahCatatan(catatan *[MAX]Catatan, jumlah *int) {
+func TambahCatatan(catatan *DaftarCatatan, jumlah *int) {
+	
 	if *jumlah >= MAX {
 		fmt.Println("Data penuh!")
 		return
