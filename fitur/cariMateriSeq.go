@@ -5,7 +5,7 @@ import (
 	"tubesalpro/catatan"
 )
 
-func SequentialSearch(data *[catatan.MAX]catatan.Catatan, jumlah int, keyword string) {
+func SequentialSearch(data *catatan.DaftarCatatan, jumlah int, keyword string) {
 	var ketemu bool
 	var i int
 	ketemu = false
@@ -26,29 +26,8 @@ func SequentialSearch(data *[catatan.MAX]catatan.Catatan, jumlah int, keyword st
 	}
 }
 
-// func BinarySearch(data *[catatan.MAX]catatan.Catatan, jumlah int, keyword string) {
-// 	var low, high, mid int
-//     SortByTopik(data, jumlah)
 
-//     low = 0
-//     high = jumlah - 1
-
-//     for low <= high {
-//         mid = (low + high) / 2
-//         if data[mid].Topik == keyword {
-//             fmt.Println("Ditemukan:", data[mid])
-//             return
-//         } else if data[mid].Topik < keyword {
-//             low = mid + 1
-//         } else {
-//             high = mid - 1
-//         }
-//     }
-//     fmt.Println("Topik tidak ditemukan.")
-// }
-
-
-func SortByTopik(data *[catatan.MAX]catatan.Catatan, jumlah int) {
+func SortByTopik(data *catatan.DaftarCatatan, jumlah int) {
 	var i, j int
     for i = 0; i < jumlah-1; i++ {
         for j = 0; j < jumlah-i-1; j++ {
