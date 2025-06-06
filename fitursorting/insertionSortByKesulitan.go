@@ -5,19 +5,37 @@ import (
 	"tubesalpro/catatan"
 )
 
-// Insertion Sort berdasarkan Kesulitan (Ascending)
-func InsertionSortByKesulitan(data *catatan.DaftarCatatan, jumlah int) {
-	var i, j int
+func InsertionSortByKesulitan(data *catatan.DaftarCatatan, jumlah int, urutan string) {
+	var pass, i int
 	var temp catatan.Catatan
-	for i = 1; i < jumlah; i++ {
-		temp = data[i]
-		j = i - 1
-		for j >= 0 && data[j].Kesulitan > temp.Kesulitan {
-			data[j+1] = data[j]
-			j--
-		}
-		data[j+1] = temp
-	}
-	fmt.Println("Data berhasil diurutkan berdasarkan kesulitan (ascending).")
-}
 
+	pass = 1
+	for pass <= jumlah-1 {
+		i = pass
+		temp = data[pass]
+
+		if urutan == "ascending" {
+			for i > 0 && temp.Kesulitan < data[i-1].Kesulitan {
+				data[i] = data[i-1]
+				i--
+			}
+		} else if urutan == "descending" {
+			for i > 0 && temp.Kesulitan > data[i-1].Kesulitan {
+				data[i] = data[i-1]
+				i--
+			}
+		} else {
+			fmt.Println("Pilihan urutan tidak valid (gunakan 'ascending' atau 'descending').")
+			return
+		}
+
+		data[i] = temp
+		pass++
+	}
+
+	if urutan == "ascending" {
+		fmt.Println("Data berhasil diurutkan berdasarkan kesulitan (ascending).")
+	} else {
+		fmt.Println("Data berhasil diurutkan berdasarkan kesulitan (descending).")
+	}
+}

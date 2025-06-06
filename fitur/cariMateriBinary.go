@@ -6,28 +6,33 @@ import (
 )
 
 func BinarySearch(data *catatan.DaftarCatatan, jumlah int, keyword string) {
-	var low, high, mid int
-    SortByTopik(data, jumlah)
 
-    low = 0
-    high = jumlah - 1
+	var left, right, mid, ketemu int
+	left = 0
+	right = jumlah - 1
+	ketemu = -1
 
-    for low <= high {
-        mid = (low + high) / 2
-        if data[mid].Topik == keyword {
-            fmt.Println("Topik ditemukan:")
-			fmt.Printf("ID        : %d\n", data[mid].ID)
-			fmt.Printf("Tanggal   : %s\n", data[mid].Tanggal)
-			fmt.Printf("Topik     : %s\n", data[mid].Topik)
-			fmt.Printf("Isi       : %s\n", data[mid].Isi)
-			fmt.Printf("Kesulitan : %d\n", data[mid].Kesulitan)
-			fmt.Println("----------------------------")
-            return
-        } else if data[mid].Topik < keyword {
-            low = mid + 1
-        } else {
-            high = mid - 1
-        }
-    }
-    fmt.Println("Topik tidak ditemukan.")
+	for left <= right && ketemu == -1 {
+		mid = (left + right) / 2
+		if data[mid].Topik == keyword {
+			ketemu = mid
+		} else if data[mid].Topik < keyword {
+			left = mid + 1
+		} else {
+			right = mid - 1
+		}
+	}
+
+	if ketemu != -1 {
+		i := ketemu
+		fmt.Println("Topik ditemukan:")
+		fmt.Printf("ID        : %d\n", data[i].ID)
+		fmt.Printf("Tanggal   : %s\n", data[i].Tanggal)
+		fmt.Printf("Topik     : %s\n", data[i].Topik)
+		fmt.Printf("Isi       : %s\n", data[i].Isi)
+		fmt.Printf("Kesulitan : %d\n", data[i].Kesulitan)
+		fmt.Println("----------------------------")
+	} else {
+		fmt.Println("Topik tidak ditemukan.")
+	}
 }
