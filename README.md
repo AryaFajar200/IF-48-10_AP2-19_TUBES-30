@@ -6,6 +6,11 @@ Aplikasi ini berfungsi sebagai pendamping belajar berbasis AI yang
 dapat merangkum catatan, membuat soal latihan, serta mengatur 
 jadwal belajar berdasarkan kebutuhan pengguna.
 
+
+## CARA MENJALANKAN PROGRAM
+- GUNAKAN go mod init
+- LALU RUN DENGAN go run .
+
 ### Built With
 
 - [![Go][Go-logo]][Go-url]
