@@ -8,11 +8,11 @@ func UbahCatatan(catatan *DaftarCatatan, jumlah int) {
 	fmt.Scan(&id)
 	for i = 0; i < jumlah; i++ {
 		if catatan[i].ID == id {
-			fmt.Print("Tanggal baru: ")
+			fmt.Print("Tanggal baru (YYYY-MM-DD): ")
 			fmt.Scan(&catatan[i].Tanggal)
-			fmt.Print("Topik baru: ")
+			fmt.Print("Topik baru (tidak bisa menggunakan spasi, gunakan underscore): ")
 			fmt.Scan(&catatan[i].Topik)
-			fmt.Print("Isi baru: ")
+			fmt.Print("Isi baru (tidak bisa menggunakan spasi, gunakan underscore): ")
 			fmt.Scan(&catatan[i].Isi)
 			fmt.Print("Kesulitan baru: ")
 			fmt.Scan(&catatan[i].Kesulitan)

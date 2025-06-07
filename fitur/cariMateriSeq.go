@@ -19,15 +19,17 @@ func SequentialSearch(data *catatan.DaftarCatatan, jumlah int, keyword string) {
 
 	if ketemu != -1 {
 		i = ketemu
-		fmt.Println("Topik ditemukan:")
-		fmt.Printf("ID        : %d\n", data[i].ID)
-		fmt.Printf("Tanggal   : %s\n", data[i].Tanggal)
-		fmt.Printf("Topik     : %s\n", data[i].Topik)
-		fmt.Printf("Isi       : %s\n", data[i].Isi)
-		fmt.Printf("Kesulitan : %d\n", data[i].Kesulitan)
-		fmt.Println("----------------------------")
+		fmt.Println("+----------------------------+")
+		fmt.Println("|      Topik ditemukan:      |")
+		fmt.Println("+----------------------------+")
+		fmt.Printf("| %-12s : %-10d |\n", "ID", data[i].ID)
+		fmt.Printf("| %-12s : %-10s |\n", "Tanggal", data[i].Tanggal)
+		fmt.Printf("| %-12s : %-10s |\n", "Topik", data[i].Topik)
+		fmt.Printf("| %-12s : %-10s |\n", "Isi", data[i].Isi)
+		fmt.Printf("| %-12s : %-10d |\n", "Kesulitan", data[i].Kesulitan)
+		fmt.Println("+----------------------------+")
 	} else {
-		fmt.Println("Topik tidak ditemukan.")
+		fmt.Printf("Topik dengan keyword %s tidak ditemukan.\n", keyword)
 	}
 }
 

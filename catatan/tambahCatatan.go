@@ -11,9 +11,9 @@ func TambahCatatan(catatan *DaftarCatatan, jumlah *int) {
 	var c Catatan
 	fmt.Print("Tanggal (YYYY-MM-DD): ")
 	fmt.Scan(&c.Tanggal)
-	fmt.Print("Topik: ")
+	fmt.Print("Topik (tidak bisa menggunakan spasi, gunakan underscore): " )
 	fmt.Scan(&c.Topik)
-	fmt.Print("Isi catatan: ")
+	fmt.Print("Isi catatan (tidak bisa menggunakan spasi, gunakan underscore):")
 	fmt.Scan(&c.Isi)
 	fmt.Print("Kesulitan (1-5): ")
 	fmt.Scan(&c.Kesulitan)

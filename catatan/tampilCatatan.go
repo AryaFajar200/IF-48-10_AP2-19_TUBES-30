@@ -8,9 +8,15 @@ func TampilkanDaftarCatatan(catatan *DaftarCatatan, jumlah int) {
 		fmt.Println("Belum ada catatan.")
 		return
 	}
-	fmt.Println("Daftar Catatan:")
+	fmt.Println("========================================================================================")
+	fmt.Println("|                                 APLIKASI AI ASISTEN BELAJAR                          |")
+	fmt.Println("========================================================================================")	
+	fmt.Printf("| %-3s | %-20s | %-15s | %-18s | %-3s        |\n", "ID", "TANGGAL", "TOPIK", "ISI", "KESULITAN")
+	fmt.Println("========================================================================================")
 	for i = 0; i < jumlah; i++ {
-		fmt.Printf("ID: %d | Tanggal: %s | Topik: %s | Kesulitan: %d\n",
-			catatan[i].ID, catatan[i].Tanggal, catatan[i].Topik, catatan[i].Kesulitan)
+	fmt.Printf("| %-3d | %-20s | %-15s | %-18s | %-3d              |\n",
+		catatan[i].ID, catatan[i].Tanggal, catatan[i].Topik, catatan[i].Isi, catatan[i].Kesulitan)
 	}
+	fmt.Println("========================================================================================")
+
 }
